@@ -1,203 +1,341 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contra o Desmatamento: Proteja Nossas Florestas | Site Oficial</title>
-    <meta name="description" content="Junte-se ao movimento contra o desmatamento florestal. Conheça os impactos, soluções e como você pode proteger as florestas vitais do nosso planeta.">
-    <meta name="keywords" content="desmatamento, floresta, meio ambiente, sustentabilidade, conservação, Amazônia, reflorestamento, impacto ambiental, mudança climática, ecologia, biodiversidade">
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="css/acessibilidade.css" disabled id="acessibilidade-css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Salve a Floresta!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Estilos personalizados para o alto contraste e espaçamento */
+        body {
+            background-color: #f8f9fa; /* Cor de fundo clara */
+            color: #343a40; /* Cor do texto padrão */
+        }
+        .high-contrast {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+        .high-contrast a {
+            color: #ffc107 !important; /* Amarelo para links em alto contraste */
+        }
+        .btn-action {
+            background-color: #28a745; /* Verde vibrante */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-action:hover {
+            background-color: #218838;
+            color: white;
+        }
+        .section-padding {
+            padding: 60px 0;
+        }
+        .footer-social-icons a {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #6c757d;
+            transition: color 0.3s ease;
+        }
+        .footer-social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
 </head>
 <body>
-    <div class="accessibility-bar">
-        <button id="toggle-contrast" title="Alternar Alto Contraste">Alto Contraste</button>
-        <button id="increase-font" title="Aumentar Tamanho da Fonte">A+</button>
-        <button id="decrease-font" title="Diminuir Tamanho da Fonte">A-</button>
-    </div>
 
-    <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
-            <a href="#inicio" class="logo" aria-label="Voltar ao início do site Contra o Desmatamento">
-                <img src="imagens/logo_verde.png" alt="Logotipo Folha Verde - Contra o Desmatamento">
-                <h1>Salve a Floresta!</h1>
-            </a>
-            <nav aria-label="Navegação Principal do Site">
-                <ul>
-                    <li><a href="#impactos">Impactos</a></li>
-                    <li><a href="#solucoes">Soluções</a></li>
-                    <li><a href="#como-ajudar">Como Ajudar</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#contato">Contato</a></li>
+            <a class="navbar-brand" href="#">Salve a Floresta!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#impacts">Impactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#solutions">Soluções</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-to-help">Como Ajudar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
                 </ul>
-            </nav>
+                <div class="ms-3">
+                    <button class="btn btn-outline-secondary btn-sm" id="highContrastToggle">Alto Contraste</button>
+                    <button class="btn btn-outline-secondary btn-sm" id="fontSizeIncrease">A+</button>
+                    <button class="btn btn-outline-secondary btn-sm" id="fontSizeDecrease">A-</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-success text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 mb-3">O Verde da Vida Pede Socorro!</h1>
+            <p class="lead mb-4">Nossas florestas são os pulmões do mundo. Aja agora contra o desmatamento e garanta o futuro do nosso planeta.</p>
+            <a href="#how-to-help" class="btn btn-lg btn-action">Faça a Diferença Agora</a>
         </div>
     </header>
-    <main>
-        <section id="inicio" class="hero-section">
-            <div class="hero-image-overlay"></div>
-            <img src="imagens/floresta_hero_hd.jpg" alt="Floresta tropical densa e exuberante com raios de sol penetrando" class="hero-background-image">
-            <div class="container hero-content">
-                <h2>O Verde da Vida Pede Socorro!</h2>
-                <p>Nossas florestas são os pulmões do mundo. Aja agora contra o desmatamento e garanta o futuro do nosso planeta.</p>
-                <a href="#como-ajudar" class="button button-primary">Faça a Diferença Agora</a>
-            </div>
-        </section>
 
-        <section id="impactos" class="content-section bordered-section">
-            <div class="container">
-                <h3>O Desmatamento: Uma Ferida Aberta no Planeta</h3>
-                <p>A cada minuto, áreas de floresta do tamanho de vários campos de futebol são destruídas. Conheça as trágicas consequências para a vida e o clima.</p>
-
-                <div class="impacts-grid">
-                    <article class="impact-card">
-                        <img src="imagens/impacto_biodiversidade_hd.jpg" alt="Macaco em uma floresta devastada, simbolizando perda de habitat">
-                        <h4>Perda de Biodiversidade</h4>
-                        <p>Milhões de espécies de plantas e animais dependem da floresta. O desmatamento leva à extinção irreversível.</p>
-                    </article>
-                    <article class="impact-card">
-                        <img src="imagens/impacto_clima_hd.jpg" alt="Seca rachada no chão, simbolizando mudança climática">
-                        <h4>Crise Climática Acelerada</h4>
-                        <p>Florestas absorvem CO2. Sua destruição libera gases do efeito estufa, intensificando o aquecimento global.</p>
-                    </article>
-                    <article class="impact-card">
-                        <img src="imagens/impacto_rios_hd.jpg" alt="Rio seco com pedras expostas">
-                        <h4>Desequilíbrio Hídrico</h4>
-                        <p>O ciclo da água é vitalmente regulado pelas árvores. Menos floresta significa menos chuva e mais desertificação.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <section id="solucoes" class="content-section bg-light bordered-section">
-            <div class="container">
-                <h3>Plantando o Futuro: Nossas Soluções</h3>
-                <p>Existem caminhos para reverter este cenário e proteger o que resta. A ação coletiva é nossa maior esperança.</p>
-                <div class="solutions-list">
-                    <article class="solution-item">
-                        <img src="imagens/solucao_reflorestar_hd.jpg" alt="Mãos plantando uma muda de árvore na terra">
-                        <h4>Reflorestamento e Restauração</h4>
-                        <p>Plantar milhões de árvores em áreas degradadas e restaurar ecossistemas é crucial para a recuperação.</p>
-                    </article>
-                    <article class="solution-item">
-                        <img src="imagens/solucao_consumo_hd.jpg" alt="Símbolo de folha em uma embalagem de produto">
-                        <h4>Consumo Consciente e Sustentável</h4>
-                        <p>Escolha produtos com certificação ambiental. Exija transparência das empresas sobre a origem de seus insumos.</p>
-                    </article>
-                    <article class="solution-item">
-                        <img src="imagens/solucao_fiscalizacao_hd.jpg" alt="Policial florestal observando uma área de floresta">
-                        <h4>Fiscalização e Legislação Forte</h4>
-                        <p>Pressione por leis mais rigorosas contra crimes ambientais e por uma fiscalização eficiente nas áreas de risco.</p>
-                    </article>
-                </div>
-                <a href="#contato" class="button button-secondary">Saiba Mais Sobre Nossas Ações</a>
-            </div>
-        </section>
-        <section id="como-ajudar" class="content-section bordered-section">
-            <div class="container">
-                <h3>Sua Ação Conta: Junte-se a Nós!</h3>
-                <p>Pequenas atitudes diárias e o apoio a causas maiores fazem uma grande diferença.</p>
-
-                <div class="help-options-grid">
-                    <article class="help-card">
-                        <h4>Doe e Apoie</h4>
-                        <p>Sua doação ajuda a financiar projetos de reflorestamento, fiscalização e educação ambiental.</p>
-                        <a href="#" class="button button-outline">Quero Doar</a>
-                    </article>
-                    <article class="help-card">
-                        <h4>Seja um Voluntário</h4>
-                        <p>Dê seu tempo e energia em nossas campanhas e atividades de campo. Sua força é vital!</p>
-                        <a href="#" class="button button-outline">Quero Ser Voluntário</a>
-                    </article>
-                    <article class="help-card">
-                        <h4>Compartilhe a Causa</h4>
-                        <p>Divulgue informações sobre o desmatamento nas suas redes sociais. A conscientização é o primeiro passo.</p>
-                        <a href="#" class="button button-outline">Compartilhar</a>
-                    </article>
-                </div>
-            </div>
-        </section>
- <section id="galeria" class="content-section bg-light bordered-section">
-            <div class="container">
-                <h3>Galeria de Impacto e Esperança</h3>
-                <p>Veja a beleza que estamos protegendo e as cicatrizes que estamos curando.</p>
-                <div class="image-gallery">
-                    <figure class="gallery-item">
-                        <img src="imagens/galeria_amazonia_hd.jpg" alt="Vista aérea da vasta Floresta Amazônica">
-                        <figcaption>Vastidão da Amazônia: Pulmão do Mundo.</figcaption>
-                    </figure>
-                    <figure class="gallery-item">
-                        <img src="imagens/galeria_area_desmatada_hd.jpg" alt="Área desmatada com troncos de árvores cortados">
-                        <figcaption>A Triste Realidade do Desmatamento.</figcaption>
-                    </figure>
-                    <figure class="gallery-item">
-                        <img src="imagens/galeria_reflorestamento_acao_hd.jpg" alt="Pessoas plantando árvores em um projeto de reflorestamento">
-                        <figcaption>Esperança em Ação: O Reflorestamento.</figcaption>
-                    </figure>
-                    <figure class="gallery-item">
-                        <img src="imagens/galeria_fauna_hd.jpg" alt="Onça-pintada em seu habitat natural">
-                        <figcaption>Nossa Fauna: A Vida que Protegemos.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-        <section id="contato" class="content-section bordered-section">
-            <div class="container">
-                <h3>Fale Conosco</h3>
-                <p>Sua voz é importante. Envie-nos uma mensagem, sugestão ou pergunta.</p>
-                <form action="#" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="nome">Seu Nome:</label>
-                        <input type="text" id="nome" name="nome" required aria-required="true" placeholder="Ex: Maria Silva">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Seu E-mail:</label>
-                        <input type="email" id="email" name="email" required aria-required="true" placeholder="Ex: seuemail@dominio.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="assunto">Assunto:</label>
-                        <input type="text" id="assunto" name="assunto" placeholder="Ex: Dúvida sobre doação">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensagem">Sua Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="6" required aria-required="true" placeholder="Escreva sua mensagem aqui..."></textarea>
-                    </div>
-                    <button type="submit" class="button button-primary">Enviar Mensagem</button>
-                </form>
-            </div>
-        </section>
-    </main>
-    <footer>
+    <section id="impacts" class="section-padding">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h4>Sobre Nós</h4>
+            <h2 class="text-center mb-5">O Desmatamento: Uma Ferida Aberta no Planeta</h2>
+            <p class="lead text-center mb-5">A cada minuto, áreas de floresta do tamanho de vários campos de futebol são destruídas. Conheça as trágicas consequências para a vida e o clima.</p>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Perda de Biodiversidade</h3>
+                            <p class="card-text">Milhões de espécies de plantas e animais dependem da floresta. O desmatamento leva à extinção irreversível.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Crise Climática Acelerada</h3>
+                            <p class="card-text">Florestas absorvem CO2. Sua destruição libera gases do efeito estufa, intensificando o aquecimento global.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Desequilíbrio Hídrico</h3>
+                            <p class="card-text">O ciclo da água é vitalmente regulado pelas árvores. Menos floresta significa menos chuva e mais desertificação.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="solutions" class="bg-light section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Plantando o Futuro: Nossas Soluções</h2>
+            <p class="lead text-center mb-5">Existem caminhos para reverter este cenário e proteger o que resta. A ação coletiva é nossa maior esperança,
+                é fundamental implementar póliticas de proteção ambiental que regulamento o desmatamento e promove a conservação das florestas  .</p>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Reflorestamento e Restauração</h3>
+                            <p class="card-text">Plantar milhões de árvores em áreas degradadas e restaurar ecossistemas é crucial para a recuperação.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Consumo Consciente e Sustentável</h3>
+                            <p class="card-text">Escolha produtos com certificação ambiental. Exija transparência das empresas sobre a origem de seus insumos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Fiscalização e Legislação Forte</h3>
+                            <p class="card-text">Pressione por leis mais rigorosas contra crimes ambientais e por uma fiscalização eficiente nas áreas de risco.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#about" class="btn btn-lg btn-outline-success">Saiba Mais Sobre Nossas Ações</a>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="how-to-help" class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Sua Ação Conta: Junte-se a Nós!</h2>
+            <p class="lead text-center mb-5">Pequenas atitudes diárias e o apoio a causas maiores fazem uma grande diferença. aliecvlajclavclaejvclajcvlajvclaecvaebvlablvhbal</p>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Doe e Apoie</h3>
+                            <p class="card-text">Sua doação ajuda a financiar projetos de reflorestamento, fiscalização e educação ambiental.</p>
+                            <a href="https://www.sosma.org.br/formas-de-contribuicao" class="btn btn-action mt-3">Quero Doar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Seja um Voluntário</h3>
+                            <p class="card-text">Dê seu tempo e energia em nossas campanhas e atividades de campo. Sua força é vital!</p>
+                            <a href="https://www.ecycle.com.br/campanha-contra-o-desmatamento/" class="btn btn-action mt-3">Quero Ser Voluntário</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Compartilhe a Causa</h3>
+                            <p class="card-text">Divulgue informações sobre o desmatamento nas suas redes sociais. A conscientização é o primeiro passo.</p>
+                            <a href="https://alerta.mapbiomas.org/" class="btn btn-action mt-3">Compartilhar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="gallery" class="bg-light section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Galeria de Impacto e Esperança</h2>
+            <p class="lead text-center mb-5">Veja a beleza que estamos protegendo e as cicatrizes que estamos curando.</p>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="https://imazon.org.br/wp-content/uploads/2018/04/floresta.jpg" class="card-img-top" alt="Vastidão da Amazônia">
+                        <div class="card-body">
+                            <p class="card-text">Vastidão da Amazônia: Pulmão do Mundo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="" class="card-img-top" alt="A Triste Realidade do Desmatamento">
+                        <div class="card-body">
+                            <p class="card-text">A Triste Realidade do Desmatamento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Reflorestamento" class="card-img-top" alt="Esperança em Ação: O Reflorestamento">
+                        <div class="card-body">
+                            <p class="card-text">Esperança em Ação: O Reflorestamento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="https://via.placeholder.com/400x300/ffc107/ffffff?text=Nossa+Fauna" class="card-img-top" alt="Nossa Fauna: A Vida que Protegemos">
+                        <div class="card-body">
+                            <p class="card-text">Nossa Fauna: A Vida que Protegemos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Fale Conosco</h2>
+            <p class="lead text-center mb-5">Sua voz é importante. Envie-nos uma mensagem, sugestão ou pergunta.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Seu Nome:</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Seu Nome Completo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Seu E-mail:</label>
+                            <input type="email" class="form-control" id="email" placeholder="seu.email@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="assunto" class="form-label">Assunto:</label>
+                            <input type="text" class="form-control" id="assunto" placeholder="Assunto da Mensagem">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label">Sua Mensagem:</label>
+                            <textarea class="form-control" id="mensagem" rows="5" placeholder="Digite sua mensagem aqui..."></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-action btn-lg">Enviar Mensagem</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Sobre Nós</h5>
                     <p>Somos um coletivo dedicado à conscientização e ação contra o desmatamento, trabalhando por um futuro mais verde.</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Links Úteis</h4>
-                    <ul>
-                        <li><a href="#">Política de Privacidade</a></li>
-                        <li><a href="#">Termos de Uso</a></li>
-                        <li><a href="#">Perguntas Frequentes</a></li>
+                <div class="col-md-4 mb-4">
+                    <h5>Links Úteis</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Termos de Uso</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Perguntas Frequentes</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h4>Siga Nossas Redes</h4>
-                    <a href="#" aria-label="Acesse nosso Facebook"><img src="imagens/icone_facebook.png" alt="Ícone Facebook"></a>
-                    <a href="#" aria-label="Acesse nosso Instagram"><img src="imagens/icone_instagram.png" alt="Ícone Instagram"></a>
-                    <a href="#" aria-label="Acesse nosso Twitter"><img src="imagens/icone_twitter.png" alt="Ícone Twitter"></a>
+                <div class="col-md-4 mb-4">
+                    <h5>Siga Nossas Redes</h5>
+                    <div class="footer-social-icons">
+                        <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                    </div>
                 </div>
             </div>
-            <p class="copyright">&copy; 2025 Contra o Desmatamento. Todos os direitos reservados.</p>
+            <div class="text-center mt-4 pt-3 border-top border-secondary">
+                <p>&copy; 2025 Contra o Desmatamento. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Funcionalidade de Alto Contraste e Aumento/Diminuição de Fonte
+        document.addEventListener('DOMContentLoaded', function() {
+            const highContrastToggle = document.getElementById('highContrastToggle');
+            const fontSizeIncrease = document.getElementById('fontSizeIncrease');
+            const fontSizeDecrease = document.getElementById('fontSizeDecrease');
+            const body = document.body;
+
+            highContrastToggle.addEventListener('click', function() {
+                body.classList.toggle('high-contrast');
+            });
+
+            let currentFontSize = 16; // Tamanho de fonte base em pixels
+
+            fontSizeIncrease.addEventListener('click', function() {
+                currentFontSize += 2;
+                body.style.fontSize = currentFontSize + 'px';
+            });
+
+            fontSizeDecrease.addEventListener('click', function() {
+                if (currentFontSize > 10) { // Evita que a fonte fique muito pequena
+                    currentFontSize -= 2;
+                    body.style.fontSize = currentFontSize + 'px';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
